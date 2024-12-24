@@ -1,18 +1,18 @@
 import logo from "./logo.svg";
-import { router, routes, route } from "react-route-dom";
+import { Router, Routes, Route } from "react-dom";
 import "./App.css";
-import login from "./components/Login";
-import signup from "./components/Signup";
-import send from "./components/send";
+import Login from "./components/Login";
+import Signup from "./components/Signup";
+import Send from "./components/send";
 
 function App() {
   return (
     <Router>
-      <routes>
-        <route path="/" element={login} />
-        <route path="/signup" element={signup} />
-        <route path="/send" element={send} />
-      </routes>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/send" element={<Send />} />
+      </Routes>
     </Router>
   );
 }
