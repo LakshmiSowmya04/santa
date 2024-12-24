@@ -17,33 +17,29 @@ function Login() {
             return;
         }
         setError('');
-        console.log('Login submitted:', formData);
+        console.log('Login:', formData);
     };
 
     return (
-        <div className="login-container">
-            <form className="login-form" onSubmit={handleSubmit}>
+        <div className="container">
+            <form onSubmit={handleSubmit}>
                 <h2>Login</h2>
-                {error && <p className="error">{error}</p>}
-                <div className="form-group">
-                    <input
-                        type="text"
-                        name="username"
-                        placeholder="Username"
-                        value={formData.username}
-                        onChange={handleChange}
-                    />
-                </div>
-                <div className="form-group">
-                    <input
-                        type="password"
-                        name="password"
-                        placeholder="Password"
-                        value={formData.password}
-                        onChange={handleChange}
-                    />
-                </div>
-                <button type="submit" className="login-button">Login</button>
+                {error && <p className="message">{error}</p>}
+                <input
+                    type="text"
+                    name="username"
+                    placeholder="Username"
+                    value={formData.username}
+                    onChange={handleChange}
+                />
+                <input
+                    type="password"
+                    name="password"
+                    placeholder="Password"
+                    value={formData.password}
+                    onChange={handleChange}
+                />
+                <button type="submit">Login</button>
             </form>
         </div>
     );
